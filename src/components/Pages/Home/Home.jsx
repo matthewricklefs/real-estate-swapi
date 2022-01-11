@@ -1,10 +1,9 @@
-import Navbar from "../../Navbar/Navbar";
+import Section1 from "./Sections/Section1";
 
 const Home = () => {
 	return (
 		<div>
-			<Navbar />
-			HOME
+			<Section1 />
 		</div>
 	);
 };
