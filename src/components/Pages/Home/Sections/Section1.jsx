@@ -6,11 +6,11 @@ import { useState } from "react";
 import building1 from "../../../../assets/building1.jpeg";
 
 const Section1 = () => {
-	const [price, setPrice] = useState(false);
-	const [location, setLocation] = useState(false);
+	const [price, setPrice] = useState("<100k");
+	const [location, setLocation] = useState("");
 
 	return (
-		<section>
+		<section className={styles.section_1}>
 			{/* Navigation */}
 			<div className={styles.Navbar}>
 				<Navbar BurgerColour={"whitesmoke"} />
@@ -51,22 +51,22 @@ const Section1 = () => {
 								id="price"
 								onChange={(e) => setPrice(e.target.value)}
 							>
-								<option value="<100k">{`<100kd`}</option>
+								<option value="< 100k">{`< 100k`}</option>
 								<option value="100k-200k">100k - 200k</option>
 								<option value="200k-500k">200k - 500k</option>
-								<option value=">500k">{`>500k`}</option>
+								<option value=">500k">{`> 500k`}</option>
 							</select>
 						</div>
 
-						<div className={styles.btn_search}>
+						<button className={styles.btn_search}>
 							<Link to="search">Search</Link>
-						</div>
+						</button>
 					</div>
+				</div>
 
-					{/* Building Image */}
-					<div className={styles.slogan_image}>
-						<img src={building1} alt="building" />
-					</div>
+				{/* Building Image */}
+				<div className={styles.slogan_image}>
+					<img src={building1} alt="building" />
 				</div>
 			</div>
 		</section>
