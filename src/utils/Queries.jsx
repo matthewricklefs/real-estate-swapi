@@ -77,7 +77,6 @@ const RENT_CARDS = gql`
           Rooms
           Bedrooms
           Bathrooms
-          Price
           Rent
           Short_Address
           Neighborhood
@@ -87,4 +86,44 @@ const RENT_CARDS = gql`
   }
 `;
 
-export { BUY_CARDS, RENT_CARDS };
+const ID_CARD = gql`
+  query GET_ID_CARD($id: ID) {
+    houses(filters: { id: { Category: { eq: $id } } }) {
+      data {
+        id
+        attributes {
+          location {
+            data {
+              attributes {
+                Category
+              }
+            }
+          }
+          Preview_Image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          categories {
+            data {
+              attributes {
+                Category
+              }
+            }
+          }
+          Street
+          Rooms
+          Bedrooms
+          Bathrooms
+          Rent
+          Short_Address
+          Neighborhood
+        }
+      }
+    }
+  }
+`;
+
+export { BUY_CARDS, RENT_CARDS, ID_CARD };

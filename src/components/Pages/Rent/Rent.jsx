@@ -12,7 +12,7 @@ const Rent = () => {
       <Navbar />
 
       <div className={styles.content}>
-        <h1>Houses for Rent</h1>
+        <h1>Houses for Renting</h1>
 
         <div className={styles.card}>
           {loading || error ? (
@@ -34,7 +34,11 @@ const Rent = () => {
                     bedrooms: `${house.attributes.Bedrooms}`,
                     bathrooms: `${house.attributes.Bathrooms}`,
                     shortAddress: `${house.attributes.Short_Address}`,
-                    price: `${house.attributes.Price}`,
+                    rent: `${house.attributes.Rent}`,
+                  }}
+                  showInfo={{
+                    price: false,
+                    rent: true,
                   }}
                 />
               ))}
