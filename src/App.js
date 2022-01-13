@@ -2,6 +2,7 @@ import "./App.scss";
 import { Route, Routes } from "react-router-dom";
 import Home from "../src/components/Pages/Home/Home";
 import Buy from "../src/components/Pages/Buy/Buy";
+import Rent from "../src/components/Pages/Rent/Rent";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/buy" element={<Buy />} />
+            <Route path="/rent" element={<Rent />} />
           </Routes>
         </header>
       </div>
