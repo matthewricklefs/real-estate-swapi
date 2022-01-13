@@ -1,9 +1,8 @@
 import styles from "./Section3.module.scss";
-import { ArrowButton } from "../../../Buttons/Buttons";
 import Carousel from "../../../Carousel/Carousel";
-
-import { SwiperSlide } from "swiper/react";
 import Card from "../../../Card/Card";
+import { ArrowButton } from "../../../Buttons/Buttons";
+import { SwiperSlide } from "swiper/react";
 import { useQuery, gql } from "@apollo/client";
 
 const CARD_DATA = gql`
