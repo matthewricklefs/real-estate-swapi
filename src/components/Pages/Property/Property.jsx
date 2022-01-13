@@ -12,10 +12,14 @@ const Property = () => {
   });
 
   const queryHandler = () => {
-    if (loading) return <h1>loading</h1>;
-    if (error) return <h1>error</h1>;
+    if (loading) {
+      return <h1>loading</h1>;
+    }
+    if (error) {
+      return <h1>error</h1>;
+    }
     if (data) {
-      if (data.house.data.length) {
+      if (data.houses.data.length) {
         let house = data.houses.data[0];
 
         return (
@@ -23,7 +27,7 @@ const Property = () => {
             <Card
               info={{
                 id: params.propertyId,
-                category: "Buy",
+                category: "Buy/Rent",
                 imageSource: `http://localhost:1337${house.attributes.Preview_Image.data.attributes.url}`,
                 city: `${house.attributes.location.data.attributes.City}`,
                 neighborhood: `${house.attributes.Neighborhood}`,
@@ -55,7 +59,7 @@ const Property = () => {
     }
   };
   return (
-    <main>
+    <main className={styles.flex}>
       <Navbar />
       <div className={styles.center}>{queryHandler()}</div>
     </main>

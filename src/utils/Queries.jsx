@@ -1,10 +1,7 @@
 import { gql } from "@apollo/client";
 const BUY_CARDS = gql`
   query GET_BUY_CARDS {
-    houses(
-      filters: { categories: { Category: { contains: "Buy" } } }
-      pagination: { limit: 6 }
-    ) {
+    houses(filters: { categories: { Category: { contains: "Buy" } } }) {
       data {
         id
         attributes {
@@ -45,10 +42,7 @@ const BUY_CARDS = gql`
 
 const RENT_CARDS = gql`
   query GET_RENT_CARDS {
-    houses(
-      filters: { categories: { Category: { contains: "Rent" } } }
-      pagination: { limit: 6 }
-    ) {
+    houses(filters: { categories: { Category: { contains: "Rent" } } }) {
       data {
         id
         attributes {
@@ -73,13 +67,13 @@ const RENT_CARDS = gql`
               }
             }
           }
+          Neighborhood
           Street
           Rooms
           Bedrooms
           Bathrooms
           Rent
           Short_Address
-          Neighborhood
         }
       }
     }
@@ -88,24 +82,10 @@ const RENT_CARDS = gql`
 
 const ID_CARD = gql`
   query GET_ID_CARD($id: ID) {
-    houses(filters: { id: { Category: { eq: $id } } }) {
+    houses(filters: { id: { eq: $id } }) {
       data {
         id
         attributes {
-          location {
-            data {
-              attributes {
-                Category
-              }
-            }
-          }
-          Preview_Image {
-            data {
-              attributes {
-                url
-              }
-            }
-          }
           categories {
             data {
               attributes {
@@ -113,13 +93,29 @@ const ID_CARD = gql`
               }
             }
           }
+          Neighborhood
+          Preview_Image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+          location {
+            data {
+              attributes {
+                City
+              }
+            }
+          }
           Street
           Rooms
           Bedrooms
           Bathrooms
+          Price
           Rent
+          Description
           Short_Address
-          Neighborhood
         }
       }
     }

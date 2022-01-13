@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/buy" element={<Buy />} />
             <Route path="/rent" element={<Rent />} />
-            <Route path="/search">
+            <Route path="/property">
               <Route path=":propertyId" element={<Property />} />
             </Route>
           </Routes>
