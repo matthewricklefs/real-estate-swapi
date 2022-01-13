@@ -36,7 +36,6 @@ const CARD_DATA = gql`
               }
             }
           }
-
           Street
           Rooms
           Bedrooms
@@ -76,8 +75,17 @@ const Section3 = () => {
                 <SwiperSlide key={index}>
                   <Card
                     info={{
+                      id: house.id,
                       category: "Buy",
-                      imageSource: `http://localhost:1337/${house.attributes.Preview_Image}`,
+                      imageSource: `http://localhost:1337${house.attributes.Preview_Image.data.attributes.url}`,
+                      city: `${house.attributes.location.data.attributes.City}`,
+                      neighborhood: `${house.attributes.Neighborhood}`,
+                      street: `${house.attributes.Street}`,
+                      rooms: `${house.attributes.Rooms}`,
+                      bedrooms: `${house.attributes.Bedrooms}`,
+                      bathrooms: `${house.attributes.Bathrooms}`,
+                      shortAddress: `${house.attributes.Short_Address}`,
+                      price: `${house.attributes.Price}`,
                     }}
                   />
                 </SwiperSlide>
