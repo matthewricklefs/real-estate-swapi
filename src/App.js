@@ -8,7 +8,7 @@ import Property from "../src/components/Pages/Property/Property";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://localhost:1337/graphql",
+  uri: "https://lit-mountain-00596.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 });
 
