@@ -1,6 +1,5 @@
-import Navbar from "../../../Navbar/Navbar";
 import styles from "./Section1.module.scss";
-
+import Navbar from "../../../Navbar/Navbar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import building1 from "../../../../assets/building1.jpeg";
@@ -37,9 +36,9 @@ const Section1 = () => {
 
               <input
                 type="text"
-                ref={location}
                 placeholder="Enter a Location"
                 onChange={(e) => setLocation(e.target.value)}
+                value={location}
               />
             </div>
 
@@ -49,8 +48,9 @@ const Section1 = () => {
 
               <select
                 name="Price"
-                id={price}
+                id="price"
                 onChange={(e) => setPrice(e.target.value)}
+                value={price}
               >
                 <option value="< 100k">{`< 100k`}</option>
                 <option value="100k-200k">100k - 200k</option>
